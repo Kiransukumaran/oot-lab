@@ -1,0 +1,102 @@
+//Binary operator overloading using friend fun.
+#include<iostream.h>
+#include<conio.h>
+class vector
+{
+private:
+	int a,b;
+	public:
+		vector()
+		{
+		a=0;
+		b=0;
+		}
+		vector(int x)
+		{
+			a=x;
+			b=x;
+		}
+		vector(int x,int y)
+		{
+			a=x;
+			b=y;
+		}
+		void set()
+		{
+			cout<<"\n enter two numbers: ";
+			cin>>a>>b;
+		}
+		void put()
+		{
+			cout<<"\n\n value" <<a<<" "<<b;
+		}
+		friend vector operator +(vector x,vector y);
+		friend vector operator -(vector x,vector y);
+		friend vector operator *(vector x,vector y);
+		friend vector operator /(vector x,vector y);
+		friend vector operator %(vector x,vector y);
+     };
+
+	vector operator + (vector x,vector y)
+	{
+		vector temp;
+		temp.a=x.a+y.a;
+		temp.b=x.b+y.b;
+		return temp;
+	}
+		vector operator - (vector x,vector y)
+	{
+		vector temp;
+		temp.a=x.a-y.a;
+		temp.b=x.b-y.b;
+		return temp;
+	}
+	vector operator *(vector x,vector y)
+	{
+		vector temp;
+		temp.a=x.a*y.a;
+		temp.b=x.b*y.b;
+		return temp;
+	}
+	vector operator /(vector x,vector y)
+	{
+		vector temp;
+		temp.a=x.a/y.a;
+		temp.b-x.b/y.b;
+		return temp;
+	}
+	vector operator % (vector x,vector y)
+	{
+		vector temp;
+		temp.a=x.a%y.a;
+		temp.b-x.b%y.b;
+		return temp;
+	}
+
+	void main()
+	{
+		clrscr();
+		vector v1,v2(10),v3(10,20);
+		v1.set();
+		v2.set();
+		v1.put();
+		v2.put();
+
+		cout<<"\n\n Addition:";
+		v3=v1+v2;
+		v3.put();
+
+		cout<<"\n\n Substraction:";
+		v3=v1-v2;
+		v3.put();
+
+		cout<<"\n\n Substraction:";
+		v3=v1/v2;
+		v3.put();
+
+		cout<<"\n\n Substraction:";
+		v3=v1%v2;
+		v3.put();
+
+		getch();
+	}
