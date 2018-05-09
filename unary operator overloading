@@ -1,0 +1,64 @@
+#include<iostream.h>
+#include<conio.h>
+class vector
+{
+	private:
+		int a,b;
+	public:
+		void set()
+		{
+			cout<<"\n\n Enter two numbers:";
+			cin>>a>>b;
+		}
+		void put()
+		{
+			cout<<"\n\n numbers "<<a <<" "<<b;
+		}
+	friend vector operator ++(vector &x)
+	{
+		vector temp;
+		temp.a= ++x.a;
+		temp.b= ++x.b;
+		return temp;
+	}
+	friend vector operator ++(vector &x,int)
+	{
+	vector temp;
+	temp.a=x.a++;
+	temp.b=x.b++;
+	return temp;
+	}
+	friend vector operator -- (vector &x)
+	{
+	vector temp;
+	temp.a=--x.a;
+	temp.b=--x.b;
+	return temp;
+	}
+	friend vector operator -- (vector &x,int)
+	{
+	vector temp;
+	temp.a=x.a--;
+	temp.b=x.b--;
+	return temp;
+	}
+};
+void main()
+{
+clrscr();
+vector v1,v2;
+v1.set();
+v2=++v1;
+v1.put();
+v2.put();
+v2=v1++;
+v1.put();
+v2.put();
+v2= --v1;
+v1.put();
+v2.put();
+v2=v1--;
+v1.put();
+v2.put();
+getch();
+}
