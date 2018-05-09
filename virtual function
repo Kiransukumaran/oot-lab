@@ -1,0 +1,48 @@
+// C++ Program to demonstrate example of Virtual Functions
+#include <iostream.h>
+#include <conio.h>
+
+class base
+{
+	public:
+		virtual void show()
+		{
+			cout<<"\n  Base class Virtual Function";
+		}
+
+		void display()
+		{
+			cout<<"\n  Base class Function" ;
+		}
+};
+
+class drive:public base
+{
+	public:
+		void display()
+		{
+			cout<<"\n  Drive class function";
+		}
+
+		void show()
+		{
+			cout<<"\n  Drive class override Function";
+		}
+};
+
+int main()
+{
+	clrscr();
+
+	base obj1;
+	base *p;
+
+	cout<<"\n\t P points to base:\n" ; p=&obj1; p->display();
+	p->show();
+
+	cout<<"\n\n\t P points to drive:\n"; drive obj2; p=&obj2; p->display();
+	p->show();
+
+	getch();
+	return 0;
+}
