@@ -1,0 +1,25 @@
+//Read data from file 
+#include<fstream.h>
+#include<conio.h>
+
+int main(void)
+{
+	int no;
+	ifstream r;
+	r.open("C:\\TCH\\F2.TXT",ios::in);
+	clrscr();
+
+	while(1)
+	{
+		r >> no;
+		if(r.eof())
+		{
+			break;
+		}
+		cout << no;
+		cout << "\n\n";
+	}
+	r.close();
+	getch();
+	return 0;
+}
