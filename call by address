@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include<conio.h>
+void calladdress(int *x)
+{
+    *x=*x+10;
+}
+
+int main()
+{
+    int a=10;
+    printf("a value = %d\n",a);
+    calladdress(&a);
+    printf("After function calling : a value = %d",a);
+    return 0;
+    getch();
+}
