@@ -1,0 +1,15 @@
+// Read String from Given File.
+#include<conio.h>
+#include<fstream.h>
+
+void main()
+{
+	char str[50];
+	ifstream r;
+	r.open("c:\\tch\\s1.txt",ios::in);
+	clrscr();
+	r>>str;
+	cout<<str;
+	r.close();
+	getch();
+}
