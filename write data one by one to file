@@ -1,0 +1,17 @@
+//Writing data in to the file one by one.
+#include<fstream.h>
+#include<conio.h>
+int main(void)
+{
+	int no;
+	ofstream w;
+	clrscr();
+	w.open("C:\\TCH\\F1.TXT",ios::out);
+
+	cout << "\n\n Enter number : ";
+	cin >> no;
+	w << no;
+	w.close();
+	getch();
+	return 0;
+}
