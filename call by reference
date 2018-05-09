@@ -1,0 +1,39 @@
+// C Program Swap Numbers in Cyclic Order Using Call by Reference
+#include <stdio.h> 
+#include <conio.h>
+
+// Function Declaration
+void cyclicSwap(int *a,int *b,int *c);
+
+int main()
+{
+	int a, b, c;
+	clrscr();
+
+	//Enter value of a, b and c
+	printf("Enter a, b and c respectively: ");
+	scanf("%d %d %d",&a,&b,&c);
+
+	printf("Value before swapping:\n");
+	printf("a = %d \nb = %d \nc = %d\n",a,b,c);
+
+	cyclicSwap(&a, &b, &c);  // Calling Function
+
+	printf("Value after swapping:\n");
+	printf("a = %d \nb = %d \nc = %d",a, b, c);
+
+	getch(); 
+	return 0;
+}
+
+// Function Definition
+void cyclicSwap(int *a,int *b,int *c)
+{
+	int temp;
+
+	// swapping in cyclic order
+	temp = *b;
+	*b = *a;
+	*a = *c;
+	*c = temp;
+}
